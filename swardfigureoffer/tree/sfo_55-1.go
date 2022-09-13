@@ -15,7 +15,7 @@ func maxDepth1(root *TreeNode) int {
 	}
 	// 2.在本次递归中要做的事：当前节点不为空的时候，就将深度加1
 	// 3.递归：递归的判断左右子树的深度，选出深度最大的，就是树的深度
-	return 1 + max(maxDepth1(root.Left), maxDepth1(root.Right))
+	return 1 + maxInt(maxDepth1(root.Left), maxDepth1(root.Right))
 }
 
 func maxDepth2(root *TreeNode) int {

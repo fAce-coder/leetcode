@@ -6,10 +6,18 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func max(a int, b int) int {
+func maxInt(a int, b int) int {
 	if a >= b {
 		return a
 	} else {
 		return b
+	}
+}
+
+func absInt(a int) int {
+	if a >= 0 {
+		return a
+	} else {
+		return -a
 	}
 }

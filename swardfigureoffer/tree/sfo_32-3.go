@@ -63,15 +63,3 @@ func levelOrder3(root *TreeNode) [][]int {
 	// 6.返回最终结果集
 	return res
 }
-
-func reverseIntSlice(nums []int) {
-	// 反转切片
-	i := 0
-	j := len(nums) - 1
-
-	for i < j {
-		nums[i], nums[j] = nums[j], nums[i]
-		i++
-		j--
-	}
-}

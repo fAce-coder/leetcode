@@ -4,22 +4,23 @@ import (
 	"math"
 )
 
-// maxOfIntArray
-//
-//	@Description:求int类型数组中的最大值
-func maxOfIntArray(nums []int) int {
-	maxOfArray := math.MinInt
-	for _, num := range nums {
-		if num > maxOfArray {
-			maxOfArray = num
-		}
-	}
-	return maxOfArray
+// 可排序切片
+type sortableNums []int
+
+func (n sortableNums) Len() int {
+	return len(n)
 }
 
-// quickSort
-//
-//	@Description: 快速排序
+func (n sortableNums) Less(i, j int) bool {
+	// 从小到大排序
+	return n[i] < n[j]
+}
+
+func (n sortableNums) Swap(i, j int) {
+	n[i], n[j] = n[j], n[i]
+}
+
+// 快速排序
 func quickSort(nums []int) {
 	// 1.定义两个匿名函数用来递归
 	var partition func([]int, int, int) int
@@ -73,18 +74,22 @@ func quickSort(nums []int) {
 	quicksort(nums, left, right)
 }
 
-// 可排序切片
-type sortableNums []int
-
-func (n sortableNums) Len() int {
-	return len(n)
+// 求int类型的绝对值
+func absInt(a int) int {
+	if a >= 0 {
+		return a
+	} else {
+		return -a
+	}
 }
 
-func (n sortableNums) Less(i, j int) bool {
-	// 从小到大排序
-	return n[i] < n[j]
-}
-
-func (n sortableNums) Swap(i, j int) {
-	n[i], n[j] = n[j], n[i]
+// 求int类型数组中的最大值
+func maxOfIntArray(nums []int) int {
+	maxOfArray := math.MinInt
+	for _, num := range nums {
+		if num > maxOfArray {
+			maxOfArray = num
+		}
+	}
+	return maxOfArray
 }

@@ -29,6 +29,7 @@ func permute(nums []int) [][]int {
 			newPath := make([]int, 0)
 			newPath = append(newPath, path...)
 			res = append(res, newPath)
+			return
 		}
 		// 2.2 创建分支：根节点将候选数组中的每一个数（树的边）加入到结果集中，来得到一个子节点（更靠近真正结果集的临时结果集）
 		for i := 0; i < n; i++ {

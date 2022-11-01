@@ -20,6 +20,29 @@ func (n sortableNums) Swap(i, j int) {
 	n[i], n[j] = n[j], n[i]
 }
 
+// 可排序二维数组
+type sortable2DNums [][]int
+
+func (s sortable2DNums) Len() int {
+	return len(s)
+}
+
+func (s sortable2DNums) Less(i, j int) bool {
+	if s[i][0] < s[j][0] {
+		// 按照数组中第一个数从小到大排序
+		return true
+	} else if s[i][0] == s[j][0] {
+		// 如果数组中第一个数相同，则按照数组中第二个数从小到大排序
+		return s[i][1] < s[j][1]
+	} else {
+		return false
+	}
+}
+
+func (s sortable2DNums) Swap(i, j int) {
+	s[i], s[j] = s[j], s[i]
+}
+
 // 快速排序
 func quickSort(nums []int) {
 	// 1.定义两个匿名函数用来递归

@@ -10,7 +10,7 @@ func exist(board [][]byte, word string) bool {
 	// 递归函数
 	var inner func(i int, j int, k int) bool
 	inner = func(i int, j int, k int) bool {
-		if (i < 0 || i > raw) || (j < 0 || j > col) || board[i][j] != byte(word[k]) {
+		if (i < 0 || i > raw) || (j < 0 || j > col) || board[i][j] != word[k] {
 			return false
 		}
 		// 如果当前是最后一个单词，则返回true

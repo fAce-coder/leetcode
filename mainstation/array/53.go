@@ -47,7 +47,7 @@ func maxSubArray(nums []int) int {
 	}
 
 	// 6.最终结果（全局最优解）：状态数组中的最大值，即以该最大值索引所在的数结尾的子数组的和最大
-	res = maxOfIntArray(dp)
+	res = maxInt(dp...)
 
 	// 7.返回结果
 	return res

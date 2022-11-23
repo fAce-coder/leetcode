@@ -106,31 +106,24 @@ func absInt(a int) int {
 	}
 }
 
-// 求两个int数的较大值
-func maxInt(a int, b int) int {
-	if a > b {
-		return a
-	} else {
-		return b
-	}
-}
-
-// 求两个int数的较小值
-func minInt(a int, b int) int {
-	if a < b {
-		return a
-	} else {
-		return b
-	}
-}
-
-// 求int类型数组中的最大值
-func maxOfIntArray(nums []int) int {
-	maxOfArray := math.MinInt
+// 求int数组中的最大值
+func maxInt(nums ...int) int {
+	maxOfNums := math.MinInt
 	for _, num := range nums {
-		if num > maxOfArray {
-			maxOfArray = num
+		if num > maxOfNums {
+			maxOfNums = num
 		}
 	}
-	return maxOfArray
+	return maxOfNums
+}
+
+// 求int数组中的最小值
+func minInt(nums ...int) int {
+	minOfNums := math.MaxInt
+	for _, num := range nums {
+		if num < minOfNums {
+			minOfNums = num
+		}
+	}
+	return minOfNums
 }

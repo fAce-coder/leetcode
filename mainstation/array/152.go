@@ -58,7 +58,7 @@ func maxProduct(nums []int) int {
 	}
 
 	// 5.维持以nums[i]为结尾的连续子序列的最大乘积的状态数组maxDp中的最大值，就是我们要找的整个数组中乘积最大的连续子数组值
-	res := maxOfIntArray(maxDp)
+	res := maxInt(maxDp...)
 
 	// 6.返回结果
 	return res
